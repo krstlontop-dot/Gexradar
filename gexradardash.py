@@ -66,6 +66,38 @@ AUTO_REFRESH_SECONDS = 60
 # ─────────────────────────────────────────────────────────────────────────────
 st.set_page_config(page_title="GEXRADAR", layout="wide", initial_sidebar_state="expanded")
 
+st.markdown("""
+<style>
+/* Remove Streamlit padding + margins */
+.block-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+}
+
+/* Remove top spacing */
+.css-18e3th9 {
+    padding-top: 0rem !important;
+}
+
+/* Make everything full width */
+.main {
+    max-width: 100% !important;
+}
+
+/* Fix iframe (for embedded HTML) */
+iframe {
+    width: 100% !important;
+    height: 100vh !important;
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 if "current_page" not in st.session_state:
     st.session_state.current_page = "DASHBOARD"
 if "radar_mode" not in st.session_state:
